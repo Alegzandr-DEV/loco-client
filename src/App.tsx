@@ -10,12 +10,13 @@ import './App.css';
 import Home from './Home';
 import Login from './Login';
 import Register from './Register';
+import ForgotPassword from './ForgotPassword';
 //import { io } from 'socket.io-client';
 import { useTranslation } from 'react-i18next';
 //const socket = io('http://localhost:9000');
 
 function App() {
-  const { t, i18n } = useTranslation('home');
+  const { i18n } = useTranslation('home');
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
@@ -37,6 +38,9 @@ function App() {
         </header>
 
         <Switch>
+          <Route path="/forgot-password">
+            <ForgotPassword />
+          </Route>
           <Route path="/register">
             <Register />
           </Route>

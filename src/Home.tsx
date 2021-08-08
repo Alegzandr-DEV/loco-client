@@ -5,7 +5,7 @@ import { faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
-  const { t, i18n } = useTranslation('home');
+  const { t } = useTranslation('home');
 
   return(
     <div>
