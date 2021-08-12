@@ -12,13 +12,13 @@ function Home() {
       <main role="main">
         <div>
           <a href="#"><button><FontAwesomeIcon icon={faGoogle} /></button></a>
-          <span>{t('login_google')}</span><br />
+          <span>{t('loginGoogle')}</span><br />
 
           <a href="#"><button><FontAwesomeIcon icon={faApple} /></button></a>
-          <span>{t('login_apple')}</span><br />
+          <span>{t('loginApple')}</span><br />
 
           <Link to="/login"><button><FontAwesomeIcon icon={faUserCircle} /></button></Link>
-          <span>{t('login_account')}</span><br />
+          <span>{t('loginAccount')}</span><br />
         </div>
       </main>
     </div>

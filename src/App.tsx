@@ -11,6 +11,7 @@ import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import ForgotPassword from './ForgotPassword';
+import Game from './Game';
 //import { io } from 'socket.io-client';
 import { useTranslation } from 'react-i18next';
 //const socket = io('http://localhost:9000');
@@ -38,6 +39,9 @@ function App() {
         </header>
 
         <Switch>
+        <Route path="/game">
+            <Game />
+          </Route>
           <Route path="/forgot-password">
             <ForgotPassword />
           </Route>
