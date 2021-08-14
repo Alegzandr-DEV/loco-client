@@ -9,7 +9,7 @@ type FormValues = {
 };
 
 function Login() {
-  const { t } = useTranslation('auth');
+  const { t }: { t: any } = useTranslation('auth');
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = handleSubmit(async (data) => {
     try {
@@ -34,7 +34,7 @@ function Login() {
           { errors.password && <span>{ t('passwordRequired') }<br /></span> }
           <Link to="/forgot-password">{ t('forgot') }</Link><br />
 
-          <button type="submit">{ t('login') }</button>
+          <input type="submit" value={ t('login') }></input>
         </form><br />
         <Link to="/register">{ t('signup') }</Link>
       </main>
