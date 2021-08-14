@@ -30,10 +30,10 @@ function App() {
             <img src={logo} alt="logo" />
           </Link>
 
-          <button type="button" onClick={() => changeLanguage('en')}>
+          <button type="button" onClick={ () => changeLanguage('en') }>
             en
           </button>
-          <button type="button" onClick={() => changeLanguage('fr')}>
+          <button type="button" onClick={ () => changeLanguage('fr') }>
             fr
           </button>
         </header>

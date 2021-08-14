@@ -11,14 +11,14 @@ function Home() {
     <div>
       <main role="main">
         <div>
-          <a href="#"><button><FontAwesomeIcon icon={faGoogle} /></button></a>
-          <span>{t('loginGoogle')}</span><br />
+          <a href="#"><button><FontAwesomeIcon icon={ faGoogle } /></button></a>
+          <span>{ t('loginGoogle') }</span><br />
 
-          <a href="#"><button><FontAwesomeIcon icon={faApple} /></button></a>
-          <span>{t('loginApple')}</span><br />
+          <a href="#"><button><FontAwesomeIcon icon={ faApple } /></button></a>
+          <span>{ t('loginApple') }</span><br />
 
-          <Link to="/login"><button><FontAwesomeIcon icon={faUserCircle} /></button></Link>
-          <span>{t('loginAccount')}</span><br />
+          <Link to="/login"><button><FontAwesomeIcon icon={ faUserCircle } /></button></Link>
+          <span>{ t('loginAccount') }</span><br />
         </div>
       </main>
     </div>

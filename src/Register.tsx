@@ -28,17 +28,17 @@ function Register() {
   return(
     <div>
       <main role="main">
-        <form onSubmit={onSubmit}>
-          <input { ...register('name', { required: true }) } type="text" name="name" placeholder={t('username')}></input><br />
-          { errors.name && <span>Username is required.<br /></span> }
-          <input { ...register('email', { required: true }) } type="email" name="email" placeholder={t('email')}></input><br />
-          { errors.email && <span>Email is required.<br /></span> }
-          <input { ...register('password', { required: true }) } type="password" name="password" placeholder={t('password')}></input><br />
-          { errors.password && <span>Password is required.<br /></span> }
+        <form onSubmit={ onSubmit }>
+          <input { ...register('name', { required: true }) } type="text" name="name" placeholder={ t('username') }></input><br />
+          { errors.name && <span>{ t('usernameRequired') }<br /></span> }
+          <input { ...register('email', { required: true }) } type="email" name="email" placeholder={ t('email') }></input><br />
+          { errors.email && <span>{ t('emailRequired') }<br /></span> }
+          <input { ...register('password', { required: true }) } type="password" name="password" placeholder={ t('password') }></input><br />
+          { errors.password && <span>{ t('passwordRequired') }<br /></span> }
 
-          <input type="submit" value={t('signup')}></input>
+          <input type="submit" value={ t('signup') }></input>
         </form><br />
-        <Link to="/login">{t('previous')}</Link>
+        <Link to="/login">{ t('previous') }</Link>
       </main>
     </div>
   );

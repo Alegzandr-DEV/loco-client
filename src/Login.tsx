@@ -27,16 +27,16 @@ function Login() {
   return(
     <div>
       <main role="main">
-        <form onSubmit={onSubmit}>
-          <input { ...register('name', { required: true }) } type="text" name="login" placeholder={t('usermail')}></input><br />
-          { errors.name && <span>Username or email is required.<br /></span> }
-          <input { ...register('password', { required: true }) } type="password" name="password" placeholder={t('password')}></input><br />
-          { errors.password && <span>Password is required.<br /></span> }
-          <Link to="/forgot-password">{t('forgot')}</Link><br />
+        <form onSubmit={ onSubmit }>
+          <input { ...register('name', { required: true }) } type="text" name="login" placeholder={ t('usermail') }></input><br />
+          { errors.name && <span>{ t('usermailRequired') }<br /></span> }
+          <input { ...register('password', { required: true }) } type="password" name="password" placeholder={ t('password') }></input><br />
+          { errors.password && <span>{ t('passwordRequired') }<br /></span> }
+          <Link to="/forgot-password">{ t('forgot') }</Link><br />
 
-          <button type="submit">{t('login')}</button>
+          <button type="submit">{ t('login') }</button>
         </form><br />
-        <Link to="/register">{t('signup')}</Link>
+        <Link to="/register">{ t('signup') }</Link>
       </main>
     </div>
   );
