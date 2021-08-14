@@ -39,7 +39,7 @@ function App() {
         </header>
 
         <Switch>
-        <Route path="/game">
+          <Route path="/game">
             <Game />
           </Route>
           <Route path="/forgot-password">
