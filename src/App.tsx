@@ -1,26 +1,37 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { 
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+//import { io } from 'socket.io-client';
 import logo from './logo.svg';
 import './App.css';
-import Home from './Home';
-import Login from './Login';
-import Register from './Register';
-import ForgotPassword from './ForgotPassword';
-import Game from './Game';
-//import { io } from 'socket.io-client';
-import { useTranslation } from 'react-i18next';
-//const socket = io('http://localhost:9000');
+import Home from './home/Home';
+import SignIn from './signIn/SignIn';
+import Register from './register/Register';
+import ForgotPassword from './forgotPassword/ForgotPassword';
+import Game from './game/Game';
+import Profile from './profile/Profile';
+import { instance } from './common/api';
 
 function App() {
+  //const socket = io('http://localhost:9000');
   const { i18n } = useTranslation('home');
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
+
+  instance.interceptors.response.use((response) => { return response; }, (error) => {
+    const status = error.response ? error.response.status : null;
+
+    if (status === 418)
+      return instance.request(error.config);
+  
+    return Promise.reject(error);
+  });
 
   return (
     <Router>
@@ -39,6 +50,9 @@ function App() {
         </header>
 
         <Switch>
+          <Route path="/user">
+            <Profile />
+          </Route>
           <Route path="/game">
             <Game />
           </Route>
@@ -48,8 +62,8 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/login">
-            <Login />
+          <Route path="/signin">
+            <SignIn />
           </Route>
           <Route path="/">
             <Home />

@@ -1,7 +1,7 @@
 {
   "title": "",
   "description": "",
-  "loginGoogle": "Log in with Google",
-  "loginApple": "Log in with Apple",
-  "loginAccount": "Use an account"
+  "signInGoogle": "Sign in with Google",
+  "signInApple": "Sign in with Apple",
+  "signInAccount": "Use an account"
 }

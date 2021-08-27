@@ -1,45 +1,33 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
+import { instance } from '../common/api';
 
-type FormValues = {
-  name: string;
-  email: string;
-  password: string;
-};
-
-function Login() {
+function SignIn() {
   const { t }: { t: any } = useTranslation('auth');
   const { register, handleSubmit, formState: { errors } } = useForm();
+
   const onSubmit = handleSubmit(async (data) => {
-    try {
-      const response = await fetch('http://localhost:9000/user', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      console.log(await response.json());
-    } catch (error) {
-      console.error(error);
-    }
+    await instance.post('/auth/signin', data);
   });
 
   return(
     <div>
       <main role="main">
         <form onSubmit={ onSubmit }>
-          <input { ...register('name', { required: true }) } type="text" name="login" placeholder={ t('usermail') }></input><br />
-          { errors.name && <span>{ t('usermailRequired') }<br /></span> }
+          <input { ...register('username', { required: true }) } type="text" name="username" placeholder={ t('usermail') }></input><br />
+          { errors.username && <span>{ t('usermailRequired') }<br /></span> }
           <input { ...register('password', { required: true }) } type="password" name="password" placeholder={ t('password') }></input><br />
           { errors.password && <span>{ t('passwordRequired') }<br /></span> }
           <Link to="/forgot-password">{ t('forgot') }</Link><br />
 
-          <input type="submit" value={ t('login') }></input>
+          <input type="submit" value={ t('signIn') }></input>
         </form><br />
-        <Link to="/register">{ t('signup') }</Link>
+        <Link to="/register">{ t('register') }</Link><br />
+        <Link to="/">{ t('previous') }</Link>
       </main>
     </div>
   );
 }
 
-export default Login;
+export default SignIn;

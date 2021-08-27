@@ -12,7 +12,7 @@ function ForgotPassword() {
 
           <button type="submit">{t('find')}</button>
         </form><br />
-        <Link to="/login">{t('previous')}</Link>
+        <Link to="/signin">{t('previous')}</Link>
       </main>
     </div>
   );
