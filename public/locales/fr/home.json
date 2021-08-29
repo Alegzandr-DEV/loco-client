@@ -3,5 +3,8 @@
   "description": "",
   "signInGoogle": "Se connecter avec Google",
   "signInApple": "Se connecter avec Apple",
-  "signInAccount": "Utiliser un compte"
+  "signInAccount": "Utiliser un compte",
+  "termsOfService": "Conditions d'utilisation",
+  "privacy": "Confidentialité",
+  "contact": "Contact"
 }

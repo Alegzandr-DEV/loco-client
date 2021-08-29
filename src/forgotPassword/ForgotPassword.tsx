@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import background from '../logo.svg';
 
 function ForgotPassword() {
   const { t } = useTranslation('auth');
@@ -7,12 +8,20 @@ function ForgotPassword() {
   return(
     <div>
       <main role="main">
-        <form>
-          <input type="email" name="email" placeholder={t('email')}></input><br />
+        <div className="card-home">
+          <div style={{ backgroundImage: `url(${ background })` }}></div>
 
-          <button type="submit">{t('find')}</button>
-        </form><br />
-        <Link to="/signin">{t('previous')}</Link>
+          <div style={{ backgroundImage: `url(${ background })` }}>
+            <form>
+              <input type="email" name="email" placeholder={t('email')}></input><br />
+
+              <button type="submit">{t('find')}</button>
+            </form><br />
+            <Link to="/signin">{t('previous')}</Link>
+          </div>
+
+          <div style={{ backgroundImage: `url(${ background })` }}></div>
+        </div>
       </main>
     </div>
   );
