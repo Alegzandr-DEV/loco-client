@@ -11634,6 +11634,11 @@ typeface-kanit@^1.1.13:
   resolved "https://registry.yarnpkg.com/typeface-kanit/-/typeface-kanit-1.1.13.tgz#84555eab8bb8091bcaa5be372339d51b1a5b4f23"
   integrity sha512-mv2v/AqKzIFj8ALW1qVin8F6i8hVu6pvXL3zbRoIBCx/D65HqWYCqSsz4/SmS8zIhYoh6PjqmgHRus9Hc77S1Q==
 
+typeface-nunito@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-nunito/-/typeface-nunito-1.1.13.tgz#a57cbd7ff3e74ed99fe60d3361971c61747d130c"
+  integrity sha512-S7tN6pMnJapUxRDNa/RPXtcsxJC0KkBNPFOfGpHCkatVLm+6ltMedgeGtr1lPZsGFXGN890TZmE18bq2pdsmKw==
+
 typescript@^4.1.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.2.tgz#6d618640d430e3569a1dfb44f7d7e600ced3ee86"

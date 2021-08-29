@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import background from '../logo.svg';
+import background from '../card-bg.svg';
 
 function ForgotPassword() {
   const { t } = useTranslation('auth');

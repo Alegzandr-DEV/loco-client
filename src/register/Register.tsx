@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
-import background from '../logo.svg';
+import background from '../card-bg.svg';
 import { instance } from '../common/api';
 
 function Register() {
   const { t }: { t: any } = useTranslation('auth');
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, watch, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = handleSubmit(async (data) => {
     Object.assign(data, { avatar: 'avatar1' }); // temporary
+    delete data.confirm;
+
     await instance.post('/users', data
     ).then((response) => {
       console.log(response);
@@ -25,12 +27,14 @@ function Register() {
 
           <div style={{ backgroundImage: `url(${ background })` }}>
             <form onSubmit={ onSubmit }>
-              <input { ...register('username', { required: true }) } type="text" name="username" placeholder={ t('username') }></input><br />
+              <input { ...register('username', { required: true }) } type="text" name="username" placeholder={ t('username') } /><br />
               { errors.username && <span>{ t('usernameRequired') }<br /></span> }
-              <input { ...register('email', { required: true }) } type="email" name="email" placeholder={ t('email') }></input><br />
+              <input { ...register('email', { required: true }) } type="email" name="email" placeholder={ t('email') } /><br />
               { errors.email && <span>{ t('emailRequired') }<br /></span> }
-              <input { ...register('password', { required: true }) } type="password" name="password" placeholder={ t('password') }></input><br />
+              <input { ...register('password', { required: true }) } type="password" name="password" placeholder={ t('password') } /><br />
               { errors.password && <span>{ t('passwordRequired') }<br /></span> }
+              <input {...register('confirm', { validate: (value) => value === watch('password') })} type="password" name="confirm" placeholder={ t('confirm') } /><br />
+              { errors.confirm && <span>{ t('confirmRequired') }<br /></span> }
 
               <input type="submit" value={ t('register') }></input>
             </form><br />

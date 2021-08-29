@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import background from '../logo.svg';
+import background from '../card-bg.svg';
 
 function Home() {
   const { t } = useTranslation('home');

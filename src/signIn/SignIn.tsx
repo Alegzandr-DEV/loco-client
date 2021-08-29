@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
-import background from '../logo.svg';
+import background from '../card-bg.svg';
 import { instance } from '../common/api';
 
 function SignIn() {
