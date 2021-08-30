@@ -1,0 +1,33 @@
+header {
+  background: $bg-dark;
+  
+  nav {
+    display: flex;
+  }
+
+  div {
+    flex: 1;
+  }
+
+  div:nth-of-type(2) {
+    text-align: center;
+
+    img, h1 {
+      display: inline-block;
+    }
+
+    img {
+      height: 80px;
+      vertical-align: middle;
+    }
+
+    h1 {
+      vertical-align: bottom;
+    }
+  }
+
+  div:nth-of-type(3) {
+    text-align: right;
+  }
+
+}

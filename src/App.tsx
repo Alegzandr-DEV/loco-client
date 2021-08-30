@@ -38,67 +38,75 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <header className="py-1 bg-dark">
-          <div className="container">
-            <nav className="row flex-nowrap justify-content-between align-items-center">
-              <div className="col-4 pt-1">
-                <button type="button" onClick={ () => changeLanguage('en') }>
-                  en
-                </button>
-                <button type="button" onClick={ () => changeLanguage('fr') }>
-                  fr
-                </button>
-              </div>
+      <header>
+        <nav>
+          <div></div>
 
-              <div className="col-4 text-center">
-                <Link to="/" className="logo">
-                  <img src="/img/logos/logo-white.svg" alt="logo" />
-                  <span>LOCO</span>
-                </Link>
-              </div>
-
-              <div className="col-4 d-flex justify-content-end align-items-center"></div>
-            </nav>
+          <div>
+            <Link to="/" className="logo">
+              <img src="/img/logos/logo-white.svg" alt="logo" />
+              <h1>LOCO</h1>
+            </Link>
           </div>
-        </header>
 
-        <Switch>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/privacy">
-            <Privacy />
-          </Route>
-          <Route path="/terms-of-service">
-            <TermsOfService />
-          </Route>
-          <Route path="/user">
-            <Profile />
-          </Route>
-          <Route path="/game">
-            <Game />
-          </Route>
-          <Route path="/forgot-password">
-            <ForgotPassword />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/signin">
-            <SignIn />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+          <div></div>
+        </nav>
+      </header>
 
-        <footer>
-          <Link to="/terms-of-service">{ t('termsOfService') }</Link> |&nbsp;
-          <Link to="/privacy">{ t('privacy') }</Link> |&nbsp;
-          <Link to="/contact">{ t('contact') }</Link>
-        </footer>
-      </div>
+      <main>
+        <div className="desktop-content">
+          <Switch>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/privacy">
+              <Privacy />
+            </Route>
+            <Route path="/terms-of-service">
+              <TermsOfService />
+            </Route>
+            <Route path="/user">
+              <Profile />
+            </Route>
+            <Route path="/game">
+              <Game />
+            </Route>
+            <Route path="/forgot-password">
+              <ForgotPassword />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="/signin">
+              <SignIn />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+
+        <div className="mobile-content"></div>
+      </main>
+
+      <footer className="desktop-content">
+        <div>
+          <button type="button" onClick={ () => changeLanguage('en') }>
+            en
+          </button>
+          <button type="button" onClick={ () => changeLanguage('fr') }>
+            fr
+          </button>
+        </div>
+
+        <div>
+          <ul>
+            <li><Link to="/terms-of-service">{ t('termsOfService') }</Link></li>
+            <li><Link to="/privacy">{ t('privacy') }</Link></li>
+            <li><Link to="/contact">{ t('contact') }</Link></li>
+          </ul>
+        </div>
+      </footer>
     </Router>
   );
 }

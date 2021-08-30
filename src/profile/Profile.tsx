@@ -28,9 +28,7 @@ function Profile() {
 
   return(
     <div>
-      <main role="main">
-        <UserList users={ users } />
-      </main>
+      <UserList users={ users } />
     </div>
   );
 }

@@ -5,7 +5,7 @@ function Privacy() {
 
   return(
     <div>
-      <main role="main"></main>
+      
     </div>
   );
 }

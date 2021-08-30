@@ -5,7 +5,7 @@ function Contact() {
 
   return(
     <div>
-      <main role="main"></main>
+      
     </div>
   );
 }

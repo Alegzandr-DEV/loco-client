@@ -1,0 +1,17 @@
+body {
+  font-weight: 300;
+  color: $font-light;
+}
+
+a {
+  color: $font-light;
+  text-decoration: none;
+
+  :hover {
+    color: $font-light;
+  }
+}
+
+h1 {
+  font-weight: 800;
+}

@@ -6,11 +6,7 @@ function Game() {
 
   return(
     <div>
-      <main role="main">
-        <div>
 
-        </div>
-      </main>
     </div>
   );
 }
