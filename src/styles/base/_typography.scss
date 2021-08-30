@@ -1,5 +1,5 @@
 body {
-  font-weight: 300;
+  font-weight: 200;
   color: $font-light;
 }
 
@@ -12,6 +12,20 @@ a {
   }
 }
 
-h1 {
-  font-weight: 800;
+header {
+  h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}
+
+footer {
+  font-size: 24px;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  button {
+    font-weight: 200;
+    text-transform: uppercase;
+  }
 }

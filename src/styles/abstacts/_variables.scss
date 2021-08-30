@@ -1,13 +1,42 @@
 // Backgrounds colors
-$body-bg: #f6be75;
 $body-gradient: linear-gradient(
   136deg, 
-  rgba(246,191,117,1) 19%, 
-  rgba(215,113,133,1) 57%, 
-  rgba(135,102,172,1) 79%, 
-  rgba(65,80,177,1) 91%
+  #f6bf75 19%, 
+  #d77185 57%, 
+  #8766ac 79%, 
+  #4150b1 91%
   );
+$body-bg: #f6be75;
 $bg-dark: #1c1c1c;
 
-// Font colors
+// Fonts colors
 $font-light: #fff;
+
+// Buttons colors
+$btn-google-gradient: linear-gradient(
+  60deg, 
+  #db4f38 0%, 
+  #db6c5b 100%
+  );
+$btn-google: #db4f38;
+
+$btn-apple-gradient: linear-gradient(
+  60deg, 
+  #c9c9c9 0%, 
+  #fff 100%
+  );
+$btn-apple: #c9c9c9;
+
+$btn-account-gradient: linear-gradient(
+  60deg, 
+  #f49b24 0%, 
+  #f6bf75 100%
+  );
+$btn-account: #f49b24;
+
+$btn-c2a: #f6c37e;
+$btn-c2a-gradient: linear-gradient(
+  90deg, 
+  #f6c37e 0%, 
+  #d8788b 100%
+  );

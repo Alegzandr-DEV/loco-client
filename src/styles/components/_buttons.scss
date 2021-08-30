@@ -1,0 +1,16 @@
+button {
+  cursor: pointer;
+}
+
+.call-to-action {
+  border-radius: 30px;
+  border: 3px solid #666;
+  box-shadow: 0px 0px 8px 6px #fff;
+  padding: 10px 110px;
+  text-transform: uppercase;
+  color: $font-light;
+  background-color: $btn-c2a;
+  background: $btn-c2a-gradient;
+  font-size: 26px;
+  font-weight: 500;
+}

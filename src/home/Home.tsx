@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import '../styles/pages/home.scss';
 import background from '../card-bg.svg';
 
@@ -12,17 +9,40 @@ function Home() {
   return(
     <div className="cards">
       <div style={{ backgroundImage: `url(${ background })` }}>
-        <a href="#"><button><FontAwesomeIcon icon={ faGoogle } /></button></a>
-        <span>{ t('signInGoogle') }</span><br />
+        <div className="signin">
+          <a href="#">
+            <button id="google"><i className="fab fa-google"></i></button>
+            <span>{ t('signInGoogle') }</span>
+          </a>
+        </div>
 
-        <a href="#"><button><FontAwesomeIcon icon={ faApple } /></button></a>
-        <span>{ t('signInApple') }</span><br />
+        <div className="signin">
+          <a href="#">
+            <button id="apple"><i className="fab fa-apple"></i></button>
+            <span>{ t('signInApple') }</span>
+          </a>
+        </div>
 
-        <Link to="/signin"><button><FontAwesomeIcon icon={ faUserCircle } /></button></Link>
-        <span>{ t('signInAccount') }</span><br />
+        <div className="signin">
+          <Link to="/signin">
+            <button id="account"><i className="fas fa-user-circle"></i></button>
+            <span>{ t('signInAccount') }</span>
+          </Link>
+        </div>
       </div>
 
-      <div style={{ backgroundImage: `url(${ background })` }}></div>
+      <div style={{ backgroundImage: `url(${ background })` }}>
+        <div>
+          <img src="/img/avatars/default-1.jpg" alt="Avatar" className="avatar" />
+          <a href="#" className="roll"><i className="fas fa-redo"></i></a>
+        </div>
+
+        <div>
+          <a href="#">
+            <button className="call-to-action">Play</button>
+          </a>
+        </div>
+      </div>
 
       <div style={{ backgroundImage: `url(${ background })` }}></div>
     </div>

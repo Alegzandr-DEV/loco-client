@@ -45,7 +45,7 @@ function App() {
           <div>
             <Link to="/" className="logo">
               <img src="/img/logos/logo-white.svg" alt="logo" />
-              <h1>LOCO</h1>
+              <h1>Loco</h1>
             </Link>
           </div>
 
@@ -89,7 +89,7 @@ function App() {
         <div className="mobile-content"></div>
       </main>
 
-      <footer className="desktop-content">
+      <footer>
         <div>
           <button type="button" onClick={ () => changeLanguage('en') }>
             en
@@ -99,7 +99,7 @@ function App() {
           </button>
         </div>
 
-        <div>
+        <div className="desktop-content">
           <ul>
             <li><Link to="/terms-of-service">{ t('termsOfService') }</Link></li>
             <li><Link to="/privacy">{ t('privacy') }</Link></li>

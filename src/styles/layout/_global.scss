@@ -1,4 +1,5 @@
 @import 'body';
+@import 'footer';
 @import 'header';
 @import 'mobile';
 
@@ -11,6 +12,5 @@
     display: block;
   }
 
-  @import 'footer';
   @import 'main';
 }
