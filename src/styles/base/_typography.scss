@@ -49,8 +49,12 @@ h1 {
 
 // Forms
 form {
-  input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder {
+  input {
     color: $font-light;
+  }
+
+  input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder {
+    color: #c3c3c3;
     font-weight: 200;
   }
 }
