@@ -27,7 +27,7 @@ function Profile() {
   useEffect(() => { getAllUsers(); }, []);
 
   return(
-    <div>
+    <div className="profile">
       <UserList users={ users } />
     </div>
   );

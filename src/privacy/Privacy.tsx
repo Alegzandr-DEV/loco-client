@@ -4,7 +4,7 @@ function Privacy() {
   const { t } = useTranslation('privacy');
 
   return(
-    <div>
+    <div className="legal">
       
     </div>
   );

@@ -2,8 +2,12 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
-button {
+button, input[type=submit], h1 {
   font-family: 'Kanit', sans-serif !important;
+}
+
+.settings {
+  font-family: 'Exo 2', sans-serif;
 }
 
 footer button {

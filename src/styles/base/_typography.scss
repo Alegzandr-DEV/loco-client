@@ -3,23 +3,60 @@ body {
   color: $font-light;
 }
 
+// Links
 a {
   color: $font-light;
   text-decoration: none;
+}
 
-  :hover {
+a:hover {
+  color: $font-light;
+}
+
+// Text format
+.align-r {
+  text-align: right;
+}
+
+.text-secondary {
+  color: $font-secondary;
+}
+
+// Buttons
+button, input[type=submit] {
+  text-transform: uppercase;
+}
+
+.btn {
+  font-weight: 300;
+
+  i {
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+  }
+}
+
+.btn-c2a {
+  font-weight: 500;
+}
+
+// Loco typography
+h1 {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+// Forms
+form {
+  input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder {
     color: $font-light;
+    font-weight: 200;
   }
 }
 
-header {
-  h1 {
-    font-weight: 800;
-    text-transform: uppercase;
-  }
-}
-
-footer {
+// Footer
+footer, .language {
   font-size: 24px;
   font-weight: 300;
   text-transform: uppercase;

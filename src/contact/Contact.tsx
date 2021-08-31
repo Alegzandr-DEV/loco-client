@@ -4,7 +4,7 @@ function Contact() {
   const { t } = useTranslation('contact');
 
   return(
-    <div>
+    <div className="contact">
       
     </div>
   );

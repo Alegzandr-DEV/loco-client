@@ -1,16 +1,56 @@
-button {
+button, input[type=submit] {
   cursor: pointer;
 }
 
-.call-to-action {
+// Sign in button
+.signin button {
+  border-radius: 20px;
+  width: 80px;
+  height: 40px;
+  font-size: 30px;
+  border: 0;
+  vertical-align: middle;
+  line-height: 0;
+  cursor: pointer;
+}
+
+// Call to action
+.btn-c2a {
   border-radius: 30px;
   border: 3px solid #666;
-  box-shadow: 0px 0px 8px 6px #fff;
+  box-shadow: 0 0 8px 6px $bg-light;
   padding: 10px 110px;
-  text-transform: uppercase;
   color: $font-light;
   background-color: $btn-c2a;
   background: $btn-c2a-gradient;
   font-size: 26px;
-  font-weight: 500;
+}
+
+.btn-c2a:hover {
+  text-shadow: 0px 0px 20px $bg-light;
+}
+
+.btn-c2a.blocked {
+  background: #c6c6c6;
+  border: 3px solid #000;
+  box-shadow: 0 0 0 3px $bg-light;
+}
+
+.btn-c2a.blocked:hover {
+  text-shadow: none;
+  cursor: not-allowed;
+}
+
+// Default button
+.btn {
+  border-radius: 30px;
+  padding: 10px 16px;
+  border: 1px solid $bg-light;
+  color: $font-light;
+  background: none;
+}
+
+.btn.active {
+  background: #efefef;
+  color: $bg-dark;
 }

@@ -5,7 +5,7 @@ function Game() {
   const { t } = useTranslation('game');
 
   return(
-    <div>
+    <div className="game">
 
     </div>
   );

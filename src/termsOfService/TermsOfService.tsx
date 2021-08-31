@@ -4,8 +4,8 @@ function TermsOfService() {
   const { t } = useTranslation('termsOfService');
 
   return(
-    <div>
-      <main role="main"></main>
+    <div className="legal">
+
     </div>
   );
 }

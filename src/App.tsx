@@ -7,8 +7,9 @@ import {
 } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 //import { io } from 'socket.io-client';
+import './styles/main.scss';
 import Home from './home/Home';
-import SignIn from './signIn/SignIn';
+import Signin from './signin/Signin';
 import Register from './register/Register';
 import ForgotPassword from './forgotPassword/ForgotPassword';
 import Game from './game/Game';
@@ -78,7 +79,7 @@ function App() {
               <Register />
             </Route>
             <Route path="/signin">
-              <SignIn />
+              <Signin />
             </Route>
             <Route path="/">
               <Home />
@@ -89,23 +90,21 @@ function App() {
         <div className="mobile-content"></div>
       </main>
 
-      <footer>
-        <div>
-          <button type="button" onClick={ () => changeLanguage('en') }>
-            en
-          </button>
-          <button type="button" onClick={ () => changeLanguage('fr') }>
-            fr
-          </button>
-        </div>
+      <div className="language">
+        <button type="button" onClick={ () => changeLanguage('en') }>
+          en
+        </button>
+        <button type="button" onClick={ () => changeLanguage('fr') }>
+          fr
+        </button>
+      </div>
 
-        <div className="desktop-content">
-          <ul>
-            <li><Link to="/terms-of-service">{ t('termsOfService') }</Link></li>
-            <li><Link to="/privacy">{ t('privacy') }</Link></li>
-            <li><Link to="/contact">{ t('contact') }</Link></li>
-          </ul>
-        </div>
+      <footer className="desktop-content">
+        <ul>
+          <li><Link to="/terms-of-service">{ t('termsOfService') }</Link></li>
+          <li><Link to="/privacy">{ t('privacy') }</Link></li>
+          <li><Link to="/contact">{ t('contact') }</Link></li>
+        </ul>
       </footer>
     </Router>
   );

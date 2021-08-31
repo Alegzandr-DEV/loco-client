@@ -11601,6 +11601,11 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-exo-2@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-exo-2/-/typeface-exo-2-1.1.13.tgz#bf4937012c245aab15cd66d845f54409303f76fe"
+  integrity sha512-tUCmbmNlBg6Ggn02ttA8i4ZDQiaBUbS2Is/AieybbMl6emZYiHNmWtOLZ0UdwXvtErnBdAGFep7vjb8gBV+WAg==
+
 typeface-kanit@^1.1.13:
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/typeface-kanit/-/typeface-kanit-1.1.13.tgz#84555eab8bb8091bcaa5be372339d51b1a5b4f23"
