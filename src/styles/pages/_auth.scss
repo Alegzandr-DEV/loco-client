@@ -50,7 +50,7 @@
 
   // Call to action adjustments
   .btn-c2a {
-    box-shadow: none;
+    @include box-shadow(none);
     border: 0;
     margin-top: 40px !important;
   }

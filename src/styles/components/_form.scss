@@ -7,7 +7,7 @@
     input[type=text], input[type=password], input[type=email] {
       padding: 15px 15px 15px 50px;
       background: #7e7e7e;
-      border-radius: 5px;
+      @include border-radius(5px);
       border: 0;
       width: calc(80% - 25px);
     }

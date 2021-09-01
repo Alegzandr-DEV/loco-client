@@ -1,0 +1,37 @@
+.home {
+  .find {
+    text-align: center;
+
+    a>div {
+      display: inline-block;
+      height: 470px;
+      min-width: 396px;
+      padding: 10px;
+      margin-top: 90px;
+      background-color: $bg-dark;
+      background-repeat: no-repeat;
+      @include background-size(417px);
+      @include border-radius(20px);
+      @include box-shadow($box-shadow);
+      border: 5px solid #efefef;
+    }
+
+    a:not(:nth-of-type(1)) {
+      margin-left: 40px;
+    }
+
+    i {
+      font-size: 90px;
+      margin-top: 45px;
+      color: $bg-dark;
+    }
+
+    h2 {
+      margin-top: 148px;
+    }
+
+    p {
+      margin-top: -34px;
+    }
+  }
+}

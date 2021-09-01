@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import background from '../card-bg.svg';
 import SigninCard from './SigninCard';
 import RulesCard from './RulesCard';
+import FindGame from './FindGame';
 
 function Home() {
   const { t } = useTranslation('home');

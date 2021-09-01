@@ -41,10 +41,19 @@ button, input[type=submit] {
   font-weight: 500;
 }
 
-// Loco typography
-h1 {
+// Titles typography
+h1, h2 {
   font-weight: 600;
   text-transform: uppercase;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+// Find game
+.find p {
+  font-size: 20px;
 }
 
 // Forms

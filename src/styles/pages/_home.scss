@@ -7,13 +7,13 @@
 
     >div {
       background-color: $bg-dark;
-      border-radius: 20px;
+      @include border-radius(20px);
       height: 630px;
       min-width: 378px;
       margin-top: 90px;
       float: left;
-      box-shadow: 0 0 8px 3px rgba(0,0,0,0.5);
-      background-size: 430px;
+      @include box-shadow($box-shadow);
+      @include background-size(430px);
       background-repeat: no-repeat;
       padding: 25px;
       position: relative;
@@ -51,17 +51,17 @@
 
     #google {
       background-color: $btn-google;
-      background: $btn-google-gradient;
+      @include linear-gradient($btn-google-gradient);
     }
 
     #apple {
       background-color: $btn-apple;
-      background: $btn-apple-gradient;
+      @include linear-gradient($btn-apple-gradient);
     }
 
     #account {
       background-color: $btn-account;
-      background: $btn-account-gradient;
+      @include linear-gradient($btn-account-gradient);
     }
   }
 
@@ -88,7 +88,7 @@
 
   .roll {
     display: inline-block;
-    border-radius: 50%;
+    @include border-radius(50%);
     color: #000;
     background: $bg-light;
     padding: 3px 7px 7px 7px;

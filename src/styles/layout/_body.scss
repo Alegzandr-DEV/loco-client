@@ -1,7 +1,7 @@
 body {
-  background: $body-gradient;
-  background-size: 100vw 100vh;
+  @include background-size(cover);
   background-color: $body-bg;
+  @include linear-gradient($body-gradient);
 }
 
 ul {

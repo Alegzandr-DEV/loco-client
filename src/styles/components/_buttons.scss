@@ -4,7 +4,7 @@ button, input[type=submit] {
 
 // Sign in button
 .signin button {
-  border-radius: 20px;
+  @include border-radius(20px);
   width: 80px;
   height: 40px;
   font-size: 30px;
@@ -16,13 +16,13 @@ button, input[type=submit] {
 
 // Call to action
 .btn-c2a {
-  border-radius: 30px;
+  @include border-radius(30px);
   border: 3px solid #666;
-  box-shadow: 0 0 8px 6px $bg-light;
+  @include box-shadow(0 0 8px 6px $bg-light);
   padding: 10px 110px;
   color: $font-light;
   background-color: $btn-c2a;
-  background: $btn-c2a-gradient;
+  @include linear-gradient($btn-c2a-gradient);
   font-size: 26px;
 }
 
@@ -33,7 +33,7 @@ button, input[type=submit] {
 .btn-c2a.blocked {
   background: #c6c6c6;
   border: 3px solid #000;
-  box-shadow: 0 0 0 3px $bg-light;
+  @include box-shadow(0 0 0 3px $bg-light);
 }
 
 .btn-c2a.blocked:hover {
@@ -43,7 +43,7 @@ button, input[type=submit] {
 
 // Default button
 .btn {
-  border-radius: 30px;
+  @include border-radius(30px);
   padding: 10px 16px;
   border: 1px solid $bg-light;
   color: $font-light;
