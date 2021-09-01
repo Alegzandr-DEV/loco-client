@@ -1,5 +1,5 @@
 .avatar {
   @include border-radius(50%);
-  border: 4px solid #000;
-  @include box-shadow(0px 0px 0px 6px $bg-light)
+  border: 0.4vh solid #000;
+  @include box-shadow(0 0 0 0.7vh $bg-light)
 }

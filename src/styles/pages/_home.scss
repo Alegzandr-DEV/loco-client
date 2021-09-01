@@ -7,15 +7,15 @@
 
     >div {
       background-color: $bg-dark;
-      @include border-radius(20px);
-      height: 630px;
-      min-width: 378px;
-      margin-top: 90px;
+      @include border-radius(2vh);
+      height: 65vh;
+      min-width: 40vh;
+      margin-top: 10vh;
       float: left;
       @include box-shadow($box-shadow);
-      @include background-size(430px);
+      @include background-size(cover);
       background-repeat: no-repeat;
-      padding: 25px;
+      padding: 2vh;
       position: relative;
     }
 
@@ -25,7 +25,7 @@
 
     >div:nth-child(2) {
       z-index: 1;
-      top: -22px;
+      top: -2.5vh;
     }
 
     >div:nth-child(3) {
@@ -37,16 +37,16 @@
     }
 
     >div:nth-child(2), >div:nth-child(3) {
-      margin-left: -80px;
+      margin-left: -6vh;
     }
   }
 
   // First section
   .signin {
-    padding: 10px;
+    padding: 1vh;
 
     span {
-      margin-left: 10px;
+      margin-left: 1vh;
     }
 
     #google {
@@ -66,7 +66,7 @@
   }
 
   .signin:not(:first-child) {
-    margin-top: 25px;
+    margin-top: 2.6vh;
   }
 
   // Second section
@@ -82,8 +82,8 @@
   }
 
   .avatar {
-    width: 225px;
-    height: 225px;
+    width: 20vh;
+    height: 20vh;
   }
 
   .roll {
@@ -91,11 +91,11 @@
     @include border-radius(50%);
     color: #000;
     background: $bg-light;
-    padding: 3px 7px 7px 7px;
-    font-size: 30px;
+    padding: 0.3vh 0.7vh 0.7vh 0.7vh;
+    font-size: 1.875em;
     position: relative;
-    left: 80px;
-    top: -50px;
+    left: 8.4vh;
+    top: -5.3vh;
     
     i {
       vertical-align: middle;

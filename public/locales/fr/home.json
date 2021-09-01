@@ -5,6 +5,14 @@
   "signInApple": "Se connecter avec Apple",
   "signInAccount": "Utiliser un compte",
   "play": "Jouer",
+  "matchmaking": {
+    "title": "Matchmaking",
+    "description": "Trouvez des adversaires en ligne"
+  },
+  "createLobby": {
+    "title": "Partie privée",
+    "description": "Jouez avec vos amis !"
+  },
   "termsOfService": "Conditions d'utilisation",
   "privacy": "Confidentialité",
   "contact": "Contact"

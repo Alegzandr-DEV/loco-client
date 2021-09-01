@@ -5,6 +5,14 @@
   "signInApple": "Sign in with Apple",
   "signInAccount": "Use an account",
   "play": "Play",
+  "matchmaking": {
+    "title": "Matchmaking",
+    "description": "Find random match online"
+  },
+  "createLobby": {
+    "title": "Create lobby",
+    "description": "Play with your friends !"
+  },
   "termsOfService": "Terms of service",
   "privacy": "Privacy",
   "contact": "Contact"

@@ -10,16 +10,16 @@ function FindGame() {
       <a href="#">
         <div style={{ backgroundImage: `url(${ background })` }}>
           <i className="fas fa-users"></i>
-          <h2>Matchmaking</h2>
-          <p>Find random match online</p>
+          <h2>{ t('matchmaking.title') }</h2>
+          <p>{ t('matchmaking.description') }</p>
         </div>
       </a>
 
       <a href="#">
         <div style={{ backgroundImage: `url(${ background })` }}>
           <i className="fas fa-user-plus"></i>
-          <h2>Create Lobby</h2>
-          <p>Play with your friends !</p>
+          <h2>{ t('createLobby.title') }</h2>
+          <p>{ t('createLobby.description') }</p>
         </div>
       </a>
     </div>

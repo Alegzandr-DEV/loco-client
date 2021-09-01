@@ -5,8 +5,32 @@ header {
     display: flex;
   }
 
-  div {
+  ul {
+    margin: 0;
+    padding: 0;
+    height: 8.4vh;
+  }
+
+  li {
+    display: inline-block;
+    margin-top: 1.9vh;
+  }
+
+  li:not(:nth-of-type(1)) {
+    margin-left: 7.4vh;
+  }
+
+  div:not(:nth-of-type(2)) {
     flex: 1;
+    padding: 0 3.2vh;
+
+    a {
+      display: inline-block;
+      min-width: 7.4vh;
+      border-width: 0.2vh;
+      text-align: center;
+      width: 100%;
+    }
   }
 
   div:nth-of-type(2) {
@@ -17,18 +41,17 @@ header {
     }
 
     img {
-      height: 80px;
+      height: 8.4vh;
       vertical-align: middle;
     }
 
     h1 {
       vertical-align: bottom;
-      margin-left: 2px;
+      margin-left: 0.2vh;
     }
   }
 
   div:nth-of-type(3) {
     text-align: right;
   }
-
 }

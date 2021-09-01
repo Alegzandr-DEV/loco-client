@@ -1,37 +1,39 @@
 .home {
+  .cards { display: none !important; }
+
   .find {
     text-align: center;
 
     a>div {
       display: inline-block;
-      height: 470px;
-      min-width: 396px;
-      padding: 10px;
-      margin-top: 90px;
+      height: 49.6vh;
+      min-width: 41.8vh;
+      padding: 1vh;
+      margin-top: 9.5vh;
       background-color: $bg-dark;
       background-repeat: no-repeat;
-      @include background-size(417px);
-      @include border-radius(20px);
+      @include background-size(45.8vh);
+      @include border-radius(2.1vh);
       @include box-shadow($box-shadow);
-      border: 5px solid #efefef;
+      border: 0.8vh solid #efefef;
     }
 
     a:not(:nth-of-type(1)) {
-      margin-left: 40px;
+      margin-left: 4.2vh;
     }
 
     i {
-      font-size: 90px;
-      margin-top: 45px;
+      font-size: 5.625em;
+      margin-top: 4.8vh;
       color: $bg-dark;
     }
 
     h2 {
-      margin-top: 148px;
+      margin-top: 15.6vh;
     }
 
     p {
-      margin-top: -34px;
+      margin-top: -3.5vh;
     }
   }
 }

@@ -41,7 +41,12 @@ function App() {
     <Router>
       <header>
         <nav>
-          <div></div>
+          <div>
+            <ul>
+              <li><Link to="/user" className="btn">Profile</Link></li>
+              <li><a href="#" className="btn">Shop</a></li>
+            </ul>
+          </div>
 
           <div>
             <Link to="/" className="logo">

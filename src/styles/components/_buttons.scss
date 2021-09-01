@@ -4,10 +4,10 @@ button, input[type=submit] {
 
 // Sign in button
 .signin button {
-  @include border-radius(20px);
-  width: 80px;
-  height: 40px;
-  font-size: 30px;
+  @include border-radius(2vh);
+  width: 9vh;
+  height: 4vh;
+  font-size: 1.875em;
   border: 0;
   vertical-align: middle;
   line-height: 0;
@@ -16,24 +16,24 @@ button, input[type=submit] {
 
 // Call to action
 .btn-c2a {
-  @include border-radius(30px);
-  border: 3px solid #666;
-  @include box-shadow(0 0 8px 6px $bg-light);
-  padding: 10px 110px;
+  @include border-radius(4vh);
+  border: 0.4vh solid #666;
+  @include box-shadow(0 0 0.8vh 0.6vh $bg-light);
+  padding: 1vh 11.6vh;
   color: $font-light;
   background-color: $btn-c2a;
   @include linear-gradient($btn-c2a-gradient);
-  font-size: 26px;
+  font-size: 1.625em;
 }
 
 .btn-c2a:hover {
-  text-shadow: 0px 0px 20px $bg-light;
+  text-shadow: 0 0 1vh $bg-light;
 }
 
 .btn-c2a.blocked {
   background: #c6c6c6;
-  border: 3px solid #000;
-  @include box-shadow(0 0 0 3px $bg-light);
+  border: 0.4vh solid #000;
+  @include box-shadow(0 0 0 0.3vh $bg-light);
 }
 
 .btn-c2a.blocked:hover {
@@ -43,9 +43,9 @@ button, input[type=submit] {
 
 // Default button
 .btn {
-  @include border-radius(30px);
-  padding: 10px 16px;
-  border: 1px solid $bg-light;
+  @include border-radius(3vh);
+  padding: 1vh 1.7vh;
+  border: 0.1vh solid $bg-light;
   color: $font-light;
   background: none;
 }

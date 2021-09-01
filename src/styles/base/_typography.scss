@@ -1,4 +1,9 @@
+html {
+  font-size: 1.7vh;
+}
+
 body {
+  font-size: 1rem;
   font-weight: 200;
   color: $font-light;
 }
@@ -23,7 +28,7 @@ a:hover {
 }
 
 // Buttons
-button, input[type=submit] {
+button, input[type=submit], .btn {
   text-transform: uppercase;
 }
 
@@ -31,9 +36,9 @@ button, input[type=submit] {
   font-weight: 300;
 
   i {
-    font-size: 20px;
+    font-size: 1.25em;
     position: relative;
-    top: 2px;
+    top: 0.2vh;
   }
 }
 
@@ -48,12 +53,12 @@ h1, h2 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 2.5em;
 }
 
 // Find game
 .find p {
-  font-size: 20px;
+  font-size: 1.25;
 }
 
 // Forms
@@ -70,7 +75,7 @@ form {
 
 // Footer
 footer, .language {
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 300;
   text-transform: uppercase;
 
