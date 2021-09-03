@@ -13,7 +13,7 @@ function Register() {
     delete data.confirm;
     delete data.accept;
 
-    await instance.post('/users', data
+    await instance.post('/auth/register', data
     ).then((response) => {
       console.log(response);
     }).catch((error) => {

@@ -37,13 +37,25 @@ function App() {
     return Promise.reject(error);
   });
 
+  const [userURL, getUserURL] = React.useState('');
+  const getUser = () => {
+    instance.post('/users')
+      .then((response) => {
+        getUserURL('/user/' + response.data.id);
+      })
+      .catch(() => {
+        getUserURL('');
+      });
+  };
+  React.useEffect(() => { getUser(); }, []);
+
   return (
     <Router>
       <header>
         <nav>
           <div>
             <ul>
-              <li><Link to="/user" className="btn">Profile</Link></li>
+              <li><Link to={ userURL } className="btn">Profile</Link></li>
               <li><a href="#" className="btn">Shop</a></li>
             </ul>
           </div>
@@ -71,7 +83,7 @@ function App() {
             <Route path="/terms-of-service">
               <TermsOfService />
             </Route>
-            <Route path="/user">
+            <Route path="/user/:id">
               <Profile />
             </Route>
             <Route path="/game">

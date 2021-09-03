@@ -28,7 +28,6 @@ function Home() {
 
         <RulesCard />
       </div>
-      <FindGame />
     </div>
   );
 }

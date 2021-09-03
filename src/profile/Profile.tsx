@@ -1,34 +1,31 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { instance } from '../common/api';
 import { useEffect, useState } from 'react';
-import UserList from './UserList';
+import User from './User';
 
-function getData() {
-  instance.get('/users').then((response) => {
-    console.log(response.data);
-  }).catch((error) => {
-    console.log(error);
-  });
-}
+type Params = {
+  id: string;
+};
 
 function Profile() {
   const { t } = useTranslation('profile');
-  const [users, getUsers] = useState('');
-  const getAllUsers = () => {
-    instance.get('/users')
+  const [userInfo, getUserInfo] = useState('');
+  const { id } = useParams<Params>();
+
+  const getUser = () => {
+    instance.get('/users/' + id)
       .then((response) => {
-        const allUsers = response.data;
-        getUsers(allUsers);
+        getUserInfo(response.data);
       })
       .catch(error => console.log(error));
   };
 
-  useEffect(() => { getAllUsers(); }, []);
+  useEffect(() => { getUser(); }, []);
 
   return(
     <div className="profile">
-      <UserList users={ users } />
+      <User user={ userInfo } />
     </div>
   );
 }
