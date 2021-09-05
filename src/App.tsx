@@ -1,4 +1,4 @@
-import React from 'react';
+import { useContext } from 'react';
 import { 
   BrowserRouter as Router,
   Switch,
@@ -8,6 +8,9 @@ import {
 import { useTranslation } from 'react-i18next';
 //import { io } from 'socket.io-client';
 import './styles/main.scss';
+import { instance } from './common/api';
+import { UserContext } from './common/UserProvider';
+import PrivateRoute from './common/PrivateRoute';
 import Home from './home/Home';
 import Signin from './signin/Signin';
 import Register from './register/Register';
@@ -17,10 +20,11 @@ import Profile from './profile/Profile';
 import TermsOfService from './termsOfService/TermsOfService';
 import Privacy from './privacy/Privacy';
 import Contact from './contact/Contact';
-import { instance } from './common/api';
+import { NavLeft, NavRight } from './common/Nav';
 
 function App() {
   //const socket = io('http://localhost:9000');
+  // Translations
   const { i18n, t } = useTranslation('home');
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -28,6 +32,7 @@ function App() {
 
   i18n.on('languageChanged', (lng) => { document.documentElement.setAttribute('lang', lng); })
 
+  // Cookie renewal
   instance.interceptors.response.use((response) => { return response; }, (error) => {
     const status = error.response ? error.response.status : null;
 
@@ -37,28 +42,14 @@ function App() {
     return Promise.reject(error);
   });
 
-  const [userURL, getUserURL] = React.useState('');
-  const getUser = () => {
-    instance.post('/users')
-      .then((response) => {
-        getUserURL('/user/' + response.data.id);
-      })
-      .catch(() => {
-        getUserURL('');
-      });
-  };
-  React.useEffect(() => { getUser(); }, []);
+  // Auth
+  const { auth } = useContext(UserContext);
 
   return (
     <Router>
       <header>
         <nav>
-          <div>
-            <ul>
-              <li><Link to={ userURL } className="btn">Profile</Link></li>
-              <li><a href="#" className="btn">Shop</a></li>
-            </ul>
-          </div>
+          <NavLeft auth={ auth } />
 
           <div>
             <Link to="/" className="logo">
@@ -67,7 +58,7 @@ function App() {
             </Link>
           </div>
 
-          <div></div>
+          <NavRight auth={ auth } />
         </nav>
       </header>
 
@@ -83,12 +74,12 @@ function App() {
             <Route path="/terms-of-service">
               <TermsOfService />
             </Route>
-            <Route path="/user/:id">
+            <PrivateRoute path="/user/:id">
               <Profile />
-            </Route>
-            <Route path="/game">
+            </PrivateRoute>
+            <PrivateRoute path="/game">
               <Game />
-            </Route>
+            </PrivateRoute>
             <Route path="/forgot-password">
               <ForgotPassword />
             </Route>

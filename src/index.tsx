@@ -8,15 +8,15 @@ import './styles/main.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './common/i18n';
-import store from './common/store';
-import { Provider } from 'react-redux';
+import UserProvider from './common/UserProvider';
+
 
 ReactDOM.render(
-  <Provider store={ store }>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-  </Provider>,
+  <UserProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </UserProvider>,
   document.getElementById('root')
 );
 

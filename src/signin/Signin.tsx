@@ -1,17 +1,28 @@
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import SigninCard from '../home/SigninCard';
 import RulesCard from '../home/RulesCard';
 import { instance } from '../common/api';
+import { UserContext } from '../common/UserProvider';
 
 function Signin() {
   const { t }: { t: any } = useTranslation('auth');
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const { signin, auth } = useContext(UserContext);
 
   const onSubmit = handleSubmit(async (data) => {
-    await instance.post('/auth/signin', data);
+    await instance.post('/auth/signin', data).then(() => {
+    signin();
+    });
   });
+
+  if (auth) {
+    return(
+      <Redirect to="/" />
+    );
+  }
 
   return(
     <div className="auth">

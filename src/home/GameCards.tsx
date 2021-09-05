@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import background from '../find-game.svg';
 
-function FindGame() {
+function GameCards() {
   const { t } = useTranslation('home');
 
   return(
@@ -26,4 +26,4 @@ function FindGame() {
   );
 }
 
-export default FindGame;
+export default GameCards;

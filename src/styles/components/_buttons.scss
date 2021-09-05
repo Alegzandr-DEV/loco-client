@@ -50,6 +50,10 @@ button, input[type=submit] {
   background: none;
 }
 
+.btn.short {
+  padding: 1vh 0;
+}
+
 .btn.active {
   background: #efefef;
   color: $bg-dark;

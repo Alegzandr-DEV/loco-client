@@ -4,13 +4,13 @@
 
     a>div {
       display: inline-block;
-      height: 49.6vh;
-      min-width: 41.8vh;
+      height: 58vh;
+      min-width: 52vh;
       padding: 1vh;
-      margin-top: 9.5vh;
+      margin-top: 11vh;
       background-color: $bg-dark;
       background-repeat: no-repeat;
-      @include background-size(45.8vh);
+      @include background-size(56vh);
       @include border-radius(2.1vh);
       @include box-shadow($box-shadow);
       border: 0.8vh solid #efefef;
@@ -21,17 +21,17 @@
     }
 
     i {
-      font-size: 5.625em;
-      margin-top: 4.8vh;
+      font-size: 7em;
+      margin-top: 5vh;
       color: $bg-dark;
     }
 
     h2 {
-      margin-top: 15.6vh;
+      margin-top: 21vh;
     }
 
     p {
-      margin-top: -3.5vh;
+      margin-top: -3.7vh;
     }
   }
 }
