@@ -21,6 +21,7 @@ import TermsOfService from './termsOfService/TermsOfService';
 import Privacy from './privacy/Privacy';
 import Contact from './contact/Contact';
 import { NavLeft, NavRight } from './common/Nav';
+import { sign } from 'crypto';
 
 function App() {
   //const socket = io('http://localhost:9000');
@@ -43,7 +44,8 @@ function App() {
   });
 
   // Auth
-  const { auth } = useContext(UserContext);
+  const { auth, signin } = useContext(UserContext);
+  signin();
 
   return (
     <Router>
