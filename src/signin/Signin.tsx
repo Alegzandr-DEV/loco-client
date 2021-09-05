@@ -14,7 +14,7 @@ function Signin() {
 
   const onSubmit = handleSubmit(async (data) => {
     await instance.post('/auth/signin', data).then(() => {
-    signin();
+      signin();
     });
   });
 
