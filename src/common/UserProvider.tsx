@@ -9,7 +9,8 @@ const contextDefaultValues: UserContextState = {
   username: '',
   auth: false,
   signin: () => {},
-  signout: () => {}
+  signout: () => {},
+  authGuest: () => {}
 };
 
 export const UserContext = createContext<UserContextState>(
@@ -43,8 +44,15 @@ const UserProvider: FC = ({ children }) => {
      });
   };
 
+  const authGuest = (user: { id: string, avatar: string, username: string }) => {
+    setId(user.id);
+    setAvatar(user.avatar);
+    setUsername(user.username);
+    setAuth(true);
+  };
+
   return (
-    <UserContext.Provider value={{ id, avatar, email, username, auth, signin, signout }}>
+    <UserContext.Provider value={{ id, avatar, email, username, auth, signin, signout, authGuest }}>
       { children }
     </UserContext.Provider>
   );

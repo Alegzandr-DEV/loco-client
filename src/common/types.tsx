@@ -5,5 +5,6 @@ export type UserContextState = {
   username: string,
   auth: boolean,
   signin: () => void,
-  signout: () => void
+  signout: () => void,
+  authGuest: (user: { id: string, avatar: string, username: string }) => void
 };

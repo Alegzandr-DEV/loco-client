@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { instance } from '../common/api';
-import { useEffect, useState } from 'react';
 import User from './User';
 
 type Params = {
