@@ -32,7 +32,3 @@ const App = () => {
 }
 
 export default App;
-function initializeApp(firebaseConfig: { apiKey: string | undefined; authDomain: string | undefined; databaseURL: string | undefined; projectId: string | undefined; storageBucket: string | undefined; messagingSenderId: string | undefined; appId: string | undefined; measurementId: string | undefined; }) {
-  throw new Error('Function not implemented.');
-}
-
