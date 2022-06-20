@@ -1,6 +1,5 @@
 import routes from './utilities/routes';
-import { auth } from './utilities/firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuth } from './contexts/AuthContext';
 import Header from './components/Header';
 import Router from './components/Router';
 import MobileApp from './containers/MobileApp';
@@ -8,7 +7,7 @@ import Language from './components/Language';
 import Footer from './components/Footer';
 
 const App = () => {
-  const [user] = useAuthState(auth);
+  const { user } = useAuth();
 
   return (
     <>

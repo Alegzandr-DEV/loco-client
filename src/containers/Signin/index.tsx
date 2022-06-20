@@ -1,16 +1,15 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { auth } from '../../utilities/firebase';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuth } from '../../contexts/AuthContext';
 import SigninCard from '../../components/SigninCard';
 import RulesCard from '../../components/RulesCard';
 
 const Signin = () => {
   const { t }: { t: any } = useTranslation('auth');
-  const [ email, setEmail ] = useState('');
-  const [ password, setPassword ] = useState('');
-  const [ signInWithEmailAndPassword, user ] = useSignInWithEmailAndPassword(auth);
+  const { signIn, user } = useAuth();
+  const emailRef = useRef<any>();
+  const passwordRef = useRef<any>();
 
   if (user) {
     return(
@@ -36,9 +35,8 @@ const Signin = () => {
             <label htmlFor="username"><i className="fas fa-user-alt"></i></label>
             <input
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               placeholder={t('email')}
+              ref={emailRef}
               required
             />
             <br />
@@ -46,9 +44,8 @@ const Signin = () => {
             <label htmlFor="password"><i className="fas fa-lock"></i></label>
             <input
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
               placeholder={t('password')}
+              ref={passwordRef}
               required
             />
             <br />
@@ -60,7 +57,7 @@ const Signin = () => {
 
             <button
               className="btn-c2a"
-              onClick={() => signInWithEmailAndPassword(email, password)}
+              onClick={() => signIn(emailRef.current.value, passwordRef.current.value)}
             >
               {t('signIn')}
             </button>

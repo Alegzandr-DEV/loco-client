@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { User } from 'firebase/auth';
 
-type NavLeftProps = {
+interface IProps {
   user: User | null | undefined
 };
 
-const NavLeft = (props: NavLeftProps) => {
+const NavLeft = (props: IProps) => {
   const { t } = useTranslation('home');
 
   // TODO: Replace uid by username inside Link tag

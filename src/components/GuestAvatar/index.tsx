@@ -1,8 +1,8 @@
-type GuestAvatarProps = {
+interface IProps {
   avatar: string
 };
 
-const GuestAvatar = (props: GuestAvatarProps) => {
+const GuestAvatar = (props: IProps) => {
   return(
     <>
       <img 

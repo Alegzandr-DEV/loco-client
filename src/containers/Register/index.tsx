@@ -1,30 +1,28 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { auth } from '../../utilities/firebase';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuth } from '../../contexts/AuthContext'
 import SigninCard from '../../components/SigninCard';
 import RulesCard from '../../components/RulesCard';
 
 const Register = () => {
   const { t }: { t: any } = useTranslation('auth');
-  const [ username, setUsername ] = useState('');
-  const [ email, setEmail ] = useState('');
-  const [ password, setPassword ] = useState('');
-  const [ confirmPassword , setConfirmPassword ] = useState('');
-  const [ acceptTerms, setAcceptTerms ] = useState('');
-  const [ createUserWithEmailAndPassword, user ] = useCreateUserWithEmailAndPassword(
-    auth, { sendEmailVerification: true }
-  );
+  const { signUp, user } = useAuth();
+  const usernameRef = useRef<any>();
+  const emailRef = useRef<any>();
+  const passwordRef = useRef<any>();
+  const confirmPasswordRef = useRef<any>();
+  const acceptTermsRef = useRef<any>();
+
 
   const register = () => {
-    if (password !== confirmPassword)
+    if (passwordRef.current.value !== confirmPasswordRef.current.value)
       return alert(t('confirmRequired'));
 
-    if (acceptTerms === '')
+    if (acceptTermsRef.current.value === '')
       return alert(t('acceptRequired'));
     
-    return createUserWithEmailAndPassword(email, password);
+    return signUp(emailRef.current.value, passwordRef.current.value);
     // TODO: Add username to user in database
   };
 
@@ -52,9 +50,8 @@ const Register = () => {
             <label htmlFor="username"><i className="fas fa-user-alt"></i></label>
             <input
               type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
               placeholder={t('username')}
+              ref={usernameRef}
               required
             />
             <br />
@@ -62,9 +59,8 @@ const Register = () => {
             <label htmlFor="email"><i className="fas fa-envelope"></i></label>
             <input
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               placeholder={t('email')}
+              ref={emailRef}
               required
             />
             <br />
@@ -72,9 +68,8 @@ const Register = () => {
             <label htmlFor="password"><i className="fas fa-lock"></i></label>
             <input
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
               placeholder={t('password')}
+              ref={passwordRef}
               required
             />
             <br />
@@ -82,17 +77,15 @@ const Register = () => {
             <label htmlFor="confirm"><i className="fas fa-lock"></i></label>
             <input
               type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder={t('confirm')}
+              ref={confirmPasswordRef}
               required
             />
             <br />
 
             <input 
               type="checkbox"
-              value={acceptTerms}
-              onChange={(e) => setAcceptTerms(e.target.value)}
+              ref={acceptTermsRef}
             />
             <span> {t('accept')}</span>
             <br />

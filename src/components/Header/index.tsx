@@ -3,11 +3,11 @@ import { User } from 'firebase/auth';
 import NavLeft from '../NavLeft';
 import NavRight from '../NavRight';
 
-type HeaderProps = {
+interface IProps {
   user: User | null | undefined
 };
 
-const Header = (props: HeaderProps) => {
+const Header = (props: IProps) => {
   return(
     <header>
       <nav>

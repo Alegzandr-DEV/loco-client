@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { auth } from '../../utilities/firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuth } from '../../contexts/AuthContext';
 import PrivateRoute from '../../components/PrivateRoute';
 
 const Game = () => {
   const { t } = useTranslation('game');
-  const [user] = useAuthState(auth);
+  const { user } = useAuth();
 
   return(
     <PrivateRoute user={user}>

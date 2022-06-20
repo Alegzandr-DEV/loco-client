@@ -2,11 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { User, signOut } from 'firebase/auth';
 import { auth } from '../../utilities/firebase';
 
-type NavRightProps = {
+interface IProps {
   user: User | null | undefined
 };
 
-const NavRight = (props: NavRightProps) => {
+const NavRight = (props: IProps) => {
   const { t } = useTranslation('home');
 
   if (props.user)

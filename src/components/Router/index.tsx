@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
-type RouterProps = {
+interface IProps {
   routes: Array<{
     name: string,
     path: string,
@@ -10,7 +10,7 @@ type RouterProps = {
   }>
 };
 
-const Router = (props: RouterProps) => {
+const Router = (props: IProps) => {
   const location = useLocation();
 
   return(

@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { signInAnonymously } from 'firebase/auth';
-import { auth } from '../../utilities/firebase';
+import { useAuth } from '../../contexts/AuthContext';
 import background from '../../assets/card-bg.svg';
 import avatars from '../../utilities/avatars';
 import GuestAvatar from '../GuestAvatar';
 
 const GuestCard = () => {
   const { t } = useTranslation('home');
+
+  const { guestSignIn } = useAuth();
 
   const [avatar, getRandomAvatar] = useState('');
   const shuffledAvatars = avatars.sort(() => 0.5 - Math.random());
@@ -25,7 +26,7 @@ const GuestCard = () => {
 
   useEffect(() => { getAvatar(); }, []);
 
-  // TODO: Store guest's avatar in db
+  // TODO: Store guest's avatar in db and change a by button
   return(
     <div style={{ backgroundImage: `url(${ background })` }}>
       <div>
@@ -38,7 +39,7 @@ const GuestCard = () => {
       <div>
         <button
           className="btn-c2a"
-          onClick={() => signInAnonymously(auth)}
+          onClick={() => guestSignIn()}
         >
           {t('play')}
         </button>

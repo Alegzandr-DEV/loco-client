@@ -1,15 +1,14 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { auth } from '../../utilities/firebase';
-import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import { useAuth } from '../../contexts/AuthContext';
 import SigninCard from '../../components/SigninCard';
 import RulesCard from '../../components/RulesCard';
 
 const ForgotPassword = () => {
   const { t }: { t: any } = useTranslation('auth');
-  const [ email, setEmail ] = useState('');
-  const [ sendPasswordResetEmail, user ] = useSendPasswordResetEmail(auth);
+  const { resetPassword, user } = useAuth();
+  const emailRef = useRef<any>();
 
   if (user) {
     return(
@@ -35,16 +34,15 @@ const ForgotPassword = () => {
             <label htmlFor="email"><i className="fas fa-envelope"></i></label>
             <input
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               placeholder={t('email')}
+              ref={emailRef}
               required
             />
             <br />
 
             <button
               className="btn-c2a long"
-              onClick={async () => { await sendPasswordResetEmail(email); alert(t('emailSent')); }}
+              onClick={async () => { await resetPassword(emailRef.current.value); alert(t('emailSent')); }}
             >
               {t('find')}
             </button>
@@ -53,7 +51,7 @@ const ForgotPassword = () => {
 
         <RulesCard />
       </div>
-    </div>
+  </div>
   );
 };
 
